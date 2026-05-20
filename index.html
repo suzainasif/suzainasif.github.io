@@ -7,15 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --bg: #050a0e;
-      --surface: #0d1a22;
-      --accent: #00e5ff;
-      --accent2: #ff6b35;
-      --accent3: #b8ff57;
-      --text: #e8f4f8;
-      --muted: #5a7a8a;
-      --border: rgba(0,229,255,0.15);
-      --glow: 0 0 30px rgba(0,229,255,0.25);
+      --bg: #fff0f4;
+      --surface: #ffe4ec;
+      --accent: #d63a6e;
+      --accent2: #ff8fab;
+      --accent3: #c2185b;
+      --text: #2d1a22;
+      --muted: #a06080;
+      --border: rgba(214,58,110,0.18);
+      --glow: 0 0 30px rgba(214,58,110,0.22);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -72,7 +72,7 @@
       padding: 1.2rem 2rem;
       display: flex; justify-content: space-between; align-items: center;
       border-bottom: 1px solid var(--border);
-      background: rgba(5,10,14,0.85);
+      background: rgba(255,240,244,0.88);
       backdrop-filter: blur(16px);
     }
     .nav-logo {
@@ -206,14 +206,14 @@
     .skill-card::before {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(0,229,255,0.04) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(214,58,110,0.05) 0%, transparent 60%);
       opacity: 0; transition: opacity 0.3s;
     }
-    .skill-card:hover { border-color: var(--border); background: rgba(0,229,255,0.04); }
+    .skill-card:hover { border-color: var(--border); background: rgba(214,58,110,0.05); }
     .skill-card:hover::before { opacity: 1; }
     .skill-icon {
       width: 44px; height: 44px;
-      background: rgba(0,229,255,0.1);
+      background: rgba(214,58,110,0.1);
       border-radius: 4px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.4rem; margin-bottom: 1.25rem;
@@ -228,8 +228,8 @@
     }
     .skill-tag {
       padding: 0.2rem 0.6rem;
-      background: rgba(0,229,255,0.08);
-      border: 1px solid rgba(0,229,255,0.2);
+      background: rgba(214,58,110,0.08);
+      border: 1px solid rgba(214,58,110,0.22);
       border-radius: 2px;
       font-family: 'Space Mono', monospace;
       font-size: 0.65rem; color: var(--accent);
@@ -400,8 +400,8 @@
         0deg,
         transparent,
         transparent 2px,
-        rgba(0,0,0,0.04) 2px,
-        rgba(0,0,0,0.04) 4px
+        rgba(0,0,0,0.015) 2px,
+        rgba(0,0,0,0.015) 4px
       );
       pointer-events: none; z-index: 500;
     }
@@ -830,7 +830,7 @@ function drawNet() {
       const d  = Math.sqrt(dx*dx + dy*dy);
       if (d < 140) {
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(0,229,255,${(1 - d/140) * 0.25})`;
+        ctx.strokeStyle = `rgba(214,58,110,${(1 - d/140) * 0.2})`;
         ctx.lineWidth = 0.5;
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -842,7 +842,7 @@ function drawNet() {
   nodes.forEach(n => {
     ctx.beginPath();
     ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0,229,255,0.6)';
+    ctx.fillStyle = 'rgba(214,58,110,0.5)';
     ctx.fill();
   });
 
